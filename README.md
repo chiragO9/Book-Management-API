@@ -141,7 +141,7 @@ The API includes books from various genres:
 
 ## 🧪 Testing the API
 
-### Using cURL:
+### Using URL:
 ```bash
 # Get all books
 curl http://127.0.0.1:8000/books
@@ -167,7 +167,6 @@ Simply open: `http://127.0.0.1:8000/docs` for interactive testing!
 
 ---
 
-## 🚀 Future Plans
 
 - [ ] Add POST endpoint to create new books
 - [ ] Add PUT endpoint to update books
@@ -182,125 +181,3 @@ Simply open: `http://127.0.0.1:8000/docs` for interactive testing!
 
 ---
 
-## 📚 What I'm Learning
-
-- FastAPI framework and async programming
-- RESTful API design principles
-- HTTP methods and status codes
-- API documentation with Swagger/OpenAPI
-- Python type hints and validation
-- Virtual environments and dependency management
-
----
-
-## 📁 Project Structure
-```
-book-management-api/
-├── main.py              # Main application file
-├── README.md            # Project documentation
-├── requirements.txt     # Python dependencies
-├── .gitignore          # Git ignore rules
-└── venv/               # Virtual environment (not in git)
-```
-
----
-
-## 🤝 Contributing
-
-This is a learning project, but suggestions and feedback are welcome!
-
-1. Fork the repository
-2. Create your feature branch
-3. Commit your changes
-4. Push to the branch
-5. Open a Pull Request
-
----
-
-## 👤 Author
-
-**Chirag Solanki**
-
-- GitHub: [@chiragO9](https://github.com/chiragO9)
-- Project: [book-management-api](https://github.com/chiragO9/book-management-api)
-
----
-
-## 📄 License
-
-This project is open source and available for educational purposes.
-
----
-
-## 🙏 Acknowledgments
-
-- Built with [FastAPI](https://fastapi.tiangolo.com/)
-- Book collection curated from various genres
-- Learning resource for API development
-
----
-
-**Happy Coding! 📚✨**
-```
-
----
-
-## 📄 Step 3: Create requirements.txt
-
-Create `requirements.txt` in your project folder:
-```
-fastapi==0.104.1
-uvicorn==0.24.0
-```
-
----
-
-## 🚫 Step 4: Create .gitignore
-
-Create `.gitignore` in your project folder:
-```
-# Python
-__pycache__/
-*.py[cod]
-*$py.class
-*.so
-.Python
-
-# Virtual Environment
-venv/
-env/
-ENV/
-.venv
-
-# FastAPI
-.pytest_cache/
-
-# IDE
-.vscode/
-.idea/
-*.swp
-*.swo
-
-# OS
-.DS_Store
-Thumbs.db
-
-# Environment variables
-.env
-.env.local
-
-# Logs
-*.log
-```
-
----
-
-## 📂 Step 5: Final Project Structure
-
-Your folder should look like this:
-```
-book-management-api/
-├── main.py              # Your FastAPI code
-├── README.md            # Documentation
-├── requirements.txt     # Dependencies
-└── .gitignore          # Git ignore rules
