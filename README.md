@@ -15,26 +15,26 @@ This is a learning project to master FastAPI and RESTful API design. The API pro
 ## Features
 
 **Current (v1.0):**
--  **Get all books** - Retrieve the complete book collection
--  **Search by title** - Find specific books (case-insensitive)
--  **Fast API** - Built with FastAPI for high performance
--  **RESTful design** - Clean and intuitive endpoints
--  **Automatic docs** - Interactive API documentation
+-  **Get all books** - Retrieve the complete book collection.
+-  **Search by title** - Find specific books (case-insensitive).
+-  **Fast API** - Built with FastAPI for high performance.
+-  **RESTful design** - Clean and intuitive endpoints.
+-  **Automatic docs** - Interactive API documentation.
 
 ---
 
 ##  Technologies Used
 
 - **Python 3.8+**
-- **FastAPI** - Modern web framework for building APIs
-- **Uvicorn** - ASGI server for running FastAPI
+- **FastAPI** - Modern web framework for building APIs.
+- **Uvicorn** - ASGI server for running FastAPI.
 
 ---
 
 ## 📦 Installation
 
 ### Prerequisites
-- Python 3.8 or higher
+- Python 3.8 or higher.
 - pip (Python package manager)
 
 ### Setup
@@ -159,10 +159,10 @@ Simply open: `http://127.0.0.1:8000/docs` for interactive testing!
 
 ### v1.0 - 16 December 2024
 -  **Initial release**
--  GET all books endpoint
--  GET book by title endpoint (case-insensitive)
--  Welcome route
--  Basic book collection with 6 books
--  FastAPI automatic documentation
+-  GET all books endpoint.
+-  GET book by title endpoint (case-insensitive).
+-  Welcome route.
+-  Basic book collection with 6 books.
+-  FastAPI automatic documentation.
 
 ---
