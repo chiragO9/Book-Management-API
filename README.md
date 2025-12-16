@@ -1,4 +1,4 @@
-# 📚 Book Management API
+# Book Management API
 
 **Current Version:** v1.0 | **Status:** Active Development
 
