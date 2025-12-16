@@ -1,0 +1,17 @@
+# Virtual Environment
+fastapienv/
+venv/
+env/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# IDEs
+.vscode/
+.idea/
+
+# Environment
+.env
