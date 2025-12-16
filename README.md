@@ -127,7 +127,7 @@ http://127.0.0.1:8000
 
 ---
 
-## 📚 Current Book Collection
+## Current Book Collection
 
 The API includes books from various genres:
 - **Magical Realism** - Gabriel García Márquez
@@ -139,7 +139,7 @@ The API includes books from various genres:
 
 ---
 
-## 🧪 Testing the API
+## Testing the API
 
 ### Using URL:
 ```bash
