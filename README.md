@@ -242,16 +242,15 @@ Simply open: `http://127.0.0.1:8000/docs` for interactive testing!
 
 ## 🗺 Version History
 
-### v2.0 - Current Release
+### v2.0 - 1 January 2026 (Current Release)
 -  **Full CRUD operations**
 -  POST endpoint to create new books
 -  PUT endpoint to update existing books
 -  DELETE endpoint to remove books
 -  Query parameter filtering by category
 -  Advanced filtering by author and category
--  Enhanced documentation
 
-### v1.0 - 16 December 2024
+### v1.0 - 16 December 2025
 -  Initial release
 -  GET all books endpoint
 -  GET book by title endpoint (case-insensitive)
