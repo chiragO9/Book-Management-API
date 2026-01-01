@@ -6,35 +6,35 @@ A RESTful API for managing books built with FastAPI and Python. Browse books by 
 
 ---
 
-## 🚀 About
+## About
 
 This is a learning project to master FastAPI and RESTful API design. The API provides endpoints to retrieve book information from a curated collection of literature across various genres.
 
 ---
 
-## ✨ Features
+## Features
 
 **Current (v1.0):**
-- 📖 **Get all books** - Retrieve the complete book collection
-- 🔍 **Search by title** - Find specific books (case-insensitive)
-- ⚡ **Fast API** - Built with FastAPI for high performance
-- 🎯 **RESTful design** - Clean and intuitive endpoints
-- 📝 **Automatic docs** - Interactive API documentation
+-  **Get all books** - Retrieve the complete book collection.
+-  **Search by title** - Find specific books (case-insensitive).
+-  **Fast API** - Built with FastAPI for high performance.
+-  **RESTful design** - Clean and intuitive endpoints.
+-  **Automatic docs** - Interactive API documentation.
 
 ---
 
-## 🛠️ Technologies Used
+##  Technologies Used
 
 - **Python 3.8+**
-- **FastAPI** - Modern web framework for building APIs
-- **Uvicorn** - ASGI server for running FastAPI
+- **FastAPI** - Modern web framework for building APIs.
+- **Uvicorn** - ASGI server for running FastAPI.
 
 ---
 
 ## 📦 Installation
 
 ### Prerequisites
-- Python 3.8 or higher
+- Python 3.8 or higher.
 - pip (Python package manager)
 
 ### Setup
@@ -68,7 +68,7 @@ pip install -r requirements.txt
 
 ---
 
-## 🎮 How to Run
+## How to Run
 
 ### Start the API server:
 ```bash
@@ -83,7 +83,7 @@ The API will be available at: `http://127.0.0.1:8000`
 
 ---
 
-## 📖 API Endpoints
+## API Endpoints
 
 ### Base URL
 ```
@@ -127,7 +127,7 @@ http://127.0.0.1:8000
 
 ---
 
-## 📚 Current Book Collection
+## Current Book Collection
 
 The API includes books from various genres:
 - **Magical Realism** - Gabriel García Márquez
@@ -139,9 +139,9 @@ The API includes books from various genres:
 
 ---
 
-## 🧪 Testing the API
+## Testing the API
 
-### Using cURL:
+### Using URL:
 ```bash
 # Get all books
 curl http://127.0.0.1:8000/books
@@ -155,152 +155,14 @@ Simply open: `http://127.0.0.1:8000/docs` for interactive testing!
 
 ---
 
-## 📋 Version History
+##  Version History
 
-### v1.0 - December 2024
-- 🎉 **Initial release**
-- ✅ GET all books endpoint
-- ✅ GET book by title endpoint (case-insensitive)
-- ✅ Welcome route
-- ✅ Basic book collection with 6 books
-- ✅ FastAPI automatic documentation
-
----
-
-## 🚀 Future Plans
-
-- [ ] Add POST endpoint to create new books
-- [ ] Add PUT endpoint to update books
-- [ ] Add DELETE endpoint to remove books
-- [ ] Filter books by author
-- [ ] Filter books by category
-- [ ] Add database integration (SQLite/PostgreSQL)
-- [ ] Add authentication
-- [ ] Add pagination for large collections
-- [ ] Add book ratings and reviews
-- [ ] Deploy to cloud (Heroku/AWS)
+### v1.0 - 16 December 2024
+-  **Initial release**
+-  GET all books endpoint.
+-  GET book by title endpoint (case-insensitive).
+-  Welcome route.
+-  Basic book collection with 6 books.
+-  FastAPI automatic documentation.
 
 ---
-
-## 📚 What I'm Learning
-
-- FastAPI framework and async programming
-- RESTful API design principles
-- HTTP methods and status codes
-- API documentation with Swagger/OpenAPI
-- Python type hints and validation
-- Virtual environments and dependency management
-
----
-
-## 📁 Project Structure
-```
-book-management-api/
-├── main.py              # Main application file
-├── README.md            # Project documentation
-├── requirements.txt     # Python dependencies
-├── .gitignore          # Git ignore rules
-└── venv/               # Virtual environment (not in git)
-```
-
----
-
-## 🤝 Contributing
-
-This is a learning project, but suggestions and feedback are welcome!
-
-1. Fork the repository
-2. Create your feature branch
-3. Commit your changes
-4. Push to the branch
-5. Open a Pull Request
-
----
-
-## 👤 Author
-
-**Chirag Solanki**
-
-- GitHub: [@chiragO9](https://github.com/chiragO9)
-- Project: [book-management-api](https://github.com/chiragO9/book-management-api)
-
----
-
-## 📄 License
-
-This project is open source and available for educational purposes.
-
----
-
-## 🙏 Acknowledgments
-
-- Built with [FastAPI](https://fastapi.tiangolo.com/)
-- Book collection curated from various genres
-- Learning resource for API development
-
----
-
-**Happy Coding! 📚✨**
-```
-
----
-
-## 📄 Step 3: Create requirements.txt
-
-Create `requirements.txt` in your project folder:
-```
-fastapi==0.104.1
-uvicorn==0.24.0
-```
-
----
-
-## 🚫 Step 4: Create .gitignore
-
-Create `.gitignore` in your project folder:
-```
-# Python
-__pycache__/
-*.py[cod]
-*$py.class
-*.so
-.Python
-
-# Virtual Environment
-venv/
-env/
-ENV/
-.venv
-
-# FastAPI
-.pytest_cache/
-
-# IDE
-.vscode/
-.idea/
-*.swp
-*.swo
-
-# OS
-.DS_Store
-Thumbs.db
-
-# Environment variables
-.env
-.env.local
-
-# Logs
-*.log
-```
-
----
-
-## 📂 Step 5: Final Project Structure
-
-Your folder should look like this:
-```
-book-management-api/
-├── main.py              # Your FastAPI code
-├── README.md            # Documentation
-├── requirements.txt     # Dependencies
-└── .gitignore          # Git ignore rules
