@@ -1,47 +1,71 @@
-# 📚 Book Management API
-**Current Version:** v2.0 | **Status:** Active Development
+# 📚 FastAPI Learning Journey - Book Management API
 
-A RESTful API for managing books built with FastAPI and Python. Browse, create, update, and delete books by title, author, and category with a fast and modern API.
+> Following Eric Thomas's FastAPI Udemy Course
 
----
-
-## About
-
-This is a learning project to master FastAPI and RESTful API design. The API provides full CRUD (Create, Read, Update, Delete) endpoints to manage a book collection across various genres.
+A progressive learning project demonstrating FastAPI concepts from basic CRUD operations to advanced data validation with Pydantic models.
 
 ---
 
-## Features
+##  Projects in This Repository
 
-**Current (v2.0):**
--  **Get all books** - Retrieve the complete book collection
--  **Search by title** - Find specific books (case-insensitive)
--  **Filter by category** - Get books by category using query parameters
--  **Filter by author & category** - Advanced filtering with multiple parameters
--  **Create books** - Add new books to the collection
--  **Update books** - Modify existing book information
--  **Delete books** - Remove books from the collection
--  **Fast API** - Built with FastAPI for high performance
--  **RESTful design** - Clean and intuitive endpoints
--  **Automatic docs** - Interactive API documentation
+### Project 1: Basic CRUD Operations (`main.py`)
+**Status:**  Complete | **Version:** v2.0
+
+Basic book management API with dictionary-based storage and simple CRUD operations.
+
+**Key Concepts:**
+- FastAPI basics
+- Path and query parameters
+- In-memory dictionary storage
+- Body() for request data
+- Basic routing
+
+**Run:**
+```bash
+uvicorn main:app --reload
+```
+
+[See Project 1 Documentation Below ↓](#project-1-documentation)
 
 ---
 
-## 🛠 Technologies Used
+### Project 2: Data Validation with Pydantic (`books2.py`)
+**Status:**  In Progress | **Version:** v1.0
 
-- **Python 3.8+**
-- **FastAPI** - Modern web framework for building APIs
-- **Uvicorn** - ASGI server for running FastAPI
+Enhanced API using Pydantic models for data validation and type safety.
+
+**Key Concepts:**
+- Pydantic BaseModel for request validation
+- Custom Python classes for data modeling
+- Type hints and validation
+- Structured data handling
+
+**New Features:**
+-  Pydantic `BookRequest` model for automatic validation
+-  Custom `Book` class for internal data structure
+-  Type-safe endpoints with automatic documentation
+-  Built-in data validation (rating must be int, etc.)
+
+**Run:**
+```bash
+uvicorn books2:app --reload
+```
+
+**API Endpoints:**
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/books` | Get all books |
+| POST | `/create_book` | Create book with Pydantic validation |
 
 ---
 
-## 📦 Installation
+## 📦 Installation & Setup
 
 ### Prerequisites
 - Python 3.8 or higher
 - pip (Python package manager)
 
-### Setup
+### One-Time Setup
 
 1. **Clone the repository**
 ```bash
@@ -49,7 +73,7 @@ git clone https://github.com/chiragO9/book-management-api.git
 cd book-management-api
 ```
 
-2. **Create virtual environment (recommended)**
+2. **Create virtual environment**
 ```bash
 # Windows
 python -m venv venv
@@ -62,7 +86,7 @@ source venv/bin/activate
 
 3. **Install dependencies**
 ```bash
-pip install fastapi uvicorn
+pip install fastapi uvicorn pydantic
 ```
 
 Or use requirements.txt:
@@ -72,29 +96,52 @@ pip install -r requirements.txt
 
 ---
 
-## How to Run
+##  How to Run
 
-### Start the API server:
+**Important:** Only one project can run at a time since they both use port 8000.
+
+### Running Project 1 (main.py):
 ```bash
+# Make sure virtual environment is activated
+venv\Scripts\activate  # Windows
+source venv/bin/activate  # Mac/Linux
+
+# Run the server
 uvicorn main:app --reload
 ```
 
-The API will be available at: `http://127.0.0.1:8000`
+### Running Project 2 (books2.py):
+```bash
+# Make sure virtual environment is activated
+venv\Scripts\activate  # Windows
+source venv/bin/activate  # Mac/Linux
 
-### Access Interactive Documentation:
-- **Swagger UI:** http://127.0.0.1:8000/docs
-- **ReDoc:** http://127.0.0.1:8000/redoc
+# Run the server
+uvicorn books2:app --reload
+```
+
+**Access at:** `http://127.0.0.1:8000`
+
+**Interactive Docs:**
+- Swagger UI: http://127.0.0.1:8000/docs
+- ReDoc: http://127.0.0.1:8000/redoc
 
 ---
 
-## API Endpoints
+## 📖 Project 1 Documentation
 
-### Base URL
-```
-http://127.0.0.1:8000
-```
+### About
+Basic REST API for managing books with dictionary-based storage and full CRUD operations.
 
-### Endpoints Reference
+### Features
+-  Get all books
+-  Search by title (case-insensitive)
+-  Filter by category
+-  Filter by author & category
+-  Create, Update, Delete books
+-  In-memory storage
+
+### API Endpoints
 
 | Method | Endpoint | Description | Example |
 |--------|----------|-------------|---------|
@@ -102,68 +149,25 @@ http://127.0.0.1:8000
 | GET | `/books` | Get all books | - |
 | GET | `/books/{book_title}` | Get book by title | `/books/sapiens` |
 | GET | `/books/?category={category}` | Get books by category | `/books/?category=Mystery` |
-| GET | `/books/{book_author}/?category={category}` | Get books by author and category | `/books/Stephen King/?category=Horror` |
-| POST | `/books/create_book` | Create a new book | See example below |
-| PUT | `/books/update_book` | Update an existing book | See example below |
+| GET | `/books/{book_author}/?category={category}` | Filter by author and category | `/books/Stephen King/?category=Horror` |
+| POST | `/books/create_book` | Create a new book | - |
+| PUT | `/books/update_book` | Update an existing book | - |
 | DELETE | `/books/delete_book/{book_title}` | Delete a book by title | `/books/delete_book/sapiens` |
 
----
+### Example Responses
 
-## Example Requests & Responses
-
-### GET `/books` - Get All Books
-**Response:**
+**GET /books**
 ```json
 [
   {
     "title": "One Hundred Years of Solitude",
     "author": "Gabriel García Márquez",
     "category": "Magical Realism"
-  },
-  {
-    "title": "Murder on the Orient Express",
-    "author": "Agatha Christie",
-    "category": "Mystery"
   }
 ]
 ```
 
-### GET `/books/sapiens` - Get Book by Title
-**Response:**
-```json
-{
-  "title": "Sapiens: A Brief History of Humankind",
-  "author": "Yuval Noah Harari",
-  "category": "Nonfiction"
-}
-```
-
-### GET `/books/?category=Mystery` - Filter by Category
-**Response:**
-```json
-[
-  {
-    "title": "Murder on the Orient Express",
-    "author": "Agatha Christie",
-    "category": "Mystery"
-  }
-]
-```
-
-### GET `/books/Stephen King/?category=Horror` - Filter by Author & Category
-**Response:**
-```json
-[
-  {
-    "title": "The Shining",
-    "author": "Stephen King",
-    "category": "Horror"
-  }
-]
-```
-
-### POST `/books/create_book` - Create New Book
-**Request Body:**
+**POST /books/create_book**
 ```json
 {
   "title": "1984",
@@ -172,99 +176,161 @@ http://127.0.0.1:8000
 }
 ```
 
-### PUT `/books/update_book` - Update Book
-**Request Body:**
+### Book Collection
+- One Hundred Years of Solitude - Gabriel García Márquez
+- Murder on the Orient Express - Agatha Christie
+- Sapiens - Yuval Noah Harari
+- The Fifth Season - N.K. Jemisin
+- Pride and Prejudice - Jane Austen
+- The Shining - Stephen King
+
+---
+
+## 📖 Project 2 Documentation
+
+### About
+Enhanced API demonstrating Pydantic data validation and structured data models.
+
+### Key Differences from Project 1
+-  Uses Pydantic `BaseModel` instead of `Body()`
+-  Custom `Book` class for internal data structure
+-  Automatic type validation (rating must be integer)
+-  Better error messages for invalid data
+-  More detailed book information (id, description, rating)
+
+### Data Models
+
+**Book Class (Internal):**
+```python
+class Book:
+    id: int
+    title: str
+    author: str
+    description: str
+    rating: str
+```
+
+**BookRequest (API Request):**
+```python
+class BookRequest(BaseModel):
+    id: int
+    title: str
+    author: str
+    description: str
+    rating: int  # Validated as integer
+```
+
+### API Endpoints
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/books` | Get all books with detailed info |
+| POST | `/create_book` | Create book (validated by Pydantic) |
+
+### Example Request
+
+**POST /create_book**
 ```json
 {
-  "title": "The Shining",
-  "author": "Stephen King",
-  "category": "Psychological Horror"
+  "id": 6,
+  "title": "1984",
+  "author": "George Orwell",
+  "description": "A dystopian social science fiction novel",
+  "rating": 5
 }
 ```
 
-### DELETE `/books/delete_book/1984` - Delete Book
-**Success:** Book removed from collection
+### Book Collection
+- A light in the Attic - Shel Silverstein (Rating: 3)
+- Soumission - Flammarion (Rating: 1)
+- Sharp Objects - Gillian Flynn (Rating: 4)
+- Sapiens - Yuval Noah Harari (Rating: 5)
+- Set me free - Kitty Stephens (Rating: 5)
 
 ---
 
-## 📚 Current Book Collection
+##  Testing the APIs
 
-The API includes books from various genres:
-- **Magical Realism** - Gabriel García Márquez
-- **Mystery** - Agatha Christie
-- **Nonfiction** - Yuval Noah Harari
-- **Fantasy** - N.K. Jemisin
-- **Classic** - Jane Austen
-- **Horror** - Stephen King
-
----
-
-## Testing the API
-
-### Using cURL:
+### Using cURL (Project 1):
 ```bash
 # Get all books
 curl http://127.0.0.1:8000/books
 
-# Get specific book
-curl http://127.0.0.1:8000/books/sapiens
-
-# Filter by category
-curl "http://127.0.0.1:8000/books/?category=Mystery"
-
-# Create a new book
+# Create a book
 curl -X POST "http://127.0.0.1:8000/books/create_book" \
   -H "Content-Type: application/json" \
   -d '{"title":"1984","author":"George Orwell","category":"Dystopian"}'
+```
 
-# Update a book
-curl -X PUT "http://127.0.0.1:8000/books/update_book" \
+### Using cURL (Project 2):
+```bash
+# Get all books
+curl http://127.0.0.1:8000/books
+
+# Create a book (with validation)
+curl -X POST "http://127.0.0.1:8000/create_book" \
   -H "Content-Type: application/json" \
-  -d '{"title":"The Shining","author":"Stephen King","category":"Psychological Horror"}'
-
-# Delete a book
-curl -X DELETE "http://127.0.0.1:8000/books/delete_book/1984"
+  -d '{"id":6,"title":"1984","author":"George Orwell","description":"Dystopian novel","rating":5}'
 ```
 
 ### Using Browser:
-Simply open: `http://127.0.0.1:8000/docs` for interactive testing!
+Open `http://127.0.0.1:8000/docs` for interactive testing with Swagger UI!
+
+---
+
+## 📚 Learning Progress
+
+###  Completed Concepts
+- **Project 1:**
+  - FastAPI application setup
+  - GET/POST/PUT/DELETE operations
+  - Path parameters
+  - Query parameters
+  - Body() for request data
+  - Dictionary-based storage
+
+- **Project 2:**
+  - Pydantic BaseModel
+  - Custom Python classes
+  - Type validation
+  - Data modeling
+
+###  Currently Learning
+- Pydantic data validation
+- Type hints in Python
+- Structured API responses
+
+###  Coming Next
+- Database integration
+- Authentication
+- Advanced validation
+- Error handling
 
 ---
 
 ##  Important Notes
 
-- **Case-insensitive searches:** All title, author, and category searches are case-insensitive
-- **In-memory storage:** Books are stored in memory and will reset when the server restarts
-- **No duplicate checking:** The API currently doesn't prevent duplicate book entries
-- **Path vs Query parameters:** Note the difference between `/books/{title}` (path) and `/books/?category=x` (query)
+- **One server at a time:** Stop one project before running another (they use the same port)
+- **Same environment:** Both projects use the same virtual environment - no reinstallation needed
+- **Data persistence:** Both projects use in-memory storage - data resets on restart
+- **Validation:** Project 2 automatically validates data types (e.g., rating must be integer)
 
 ---
 
 ## 🗺 Version History
 
-### v2.0 - 1 January 2026 (Current Release)
--  **Full CRUD operations**
--  POST endpoint to create new books
--  PUT endpoint to update existing books
--  DELETE endpoint to remove books
--  Query parameter filtering by category
+### Project 2 - v1.0 (1 January 2026)
+-  Added Pydantic models for validation
+-  Implemented BookRequest BaseModel
+-  Created custom Book class
+-  In Progress
+
+### Project 1 - v2.0 (1 January 2026)
+-  Full CRUD operations complete
+-  Query parameter filtering
 -  Advanced filtering by author and category
 
-### v1.0 - 16 December 2025
--  Initial release
--  GET all books endpoint
--  GET book by title endpoint (case-insensitive)
--  Welcome route
--  Basic book collection with 6 books
--  FastAPI automatic documentation
+### Project 1 - v1.0 (16 December 2025)
+-  Initial release with basic endpoints
 
----
-
-## Future Enhancements
-
-Potential improvements for future versions:
-- Database integration (SQLite/PostgreSQL)
-- Data validation with Pydantic models
-- Authentication and authorization
-- Error handling improvements
 ---
