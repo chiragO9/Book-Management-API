@@ -1,7 +1,5 @@
 # 📚 FastAPI Learning Journey - Book Management API
 
-> Following Eric Thomas's FastAPI Udemy Course
-
 A progressive learning project demonstrating FastAPI concepts from basic CRUD operations to advanced data validation with Pydantic models.
 
 ---
@@ -24,9 +22,6 @@ Basic book management API with dictionary-based storage and simple CRUD operatio
 ```bash
 uvicorn main:app --reload
 ```
-
-[See Project 1 Documentation Below ↓](#project-1-documentation)
-
 ---
 
 ### Project 2: Data Validation with Pydantic (`books2.py`)
